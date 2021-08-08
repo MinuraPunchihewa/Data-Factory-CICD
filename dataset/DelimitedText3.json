@@ -1,0 +1,65 @@
+{
+	"name": "DelimitedText3",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "shows-10000.csv",
+				"fileSystem": "datalakecontainer"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "~id",
+				"type": "String"
+			},
+			{
+				"name": "titleType:String",
+				"type": "String"
+			},
+			{
+				"name": "primaryTitle:String",
+				"type": "String"
+			},
+			{
+				"name": "isAdult:Bool",
+				"type": "String"
+			},
+			{
+				"name": "startYear:String",
+				"type": "String"
+			},
+			{
+				"name": "endYear:String",
+				"type": "String"
+			},
+			{
+				"name": "runtimeMinutes:String",
+				"type": "String"
+			},
+			{
+				"name": "averageRating:Float",
+				"type": "String"
+			},
+			{
+				"name": "numVotes:Float",
+				"type": "String"
+			},
+			{
+				"name": "~label",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
