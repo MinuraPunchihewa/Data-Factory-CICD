@@ -11,8 +11,17 @@
 		"AzureDataLakeStorage1_accountKey": {
 			"value": ""
 		},
+		"FileServer1_password": {
+			"value": ""
+		},
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"value": "https://datalakestorepractice.dfs.core.windows.net"
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "\\\\DESKTOP-T9KNTH0\\Users\\DELL\\Documents\\Projects\\VLA\\Datasets\\Data"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "Minura Punchihewa"
 		},
 		"containerUri": {
 			"value": ""
