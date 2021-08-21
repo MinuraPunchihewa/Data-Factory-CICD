@@ -1,8 +1,8 @@
 {
-	"name": "STG",
+	"name": "SRC",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureSqlDatabase2",
+			"referenceName": "AzureSqlDatabase3",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
