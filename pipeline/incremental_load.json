@@ -131,7 +131,7 @@
 											"source": {
 												"type": "AzureSqlSource",
 												"sqlReaderQuery": {
-													"value": "SELECT *\nFROM @{item().Table_Name}",
+													"value": "SELECT *\nFROM @{item().Table_Name}\nWHERE Convert(varchar(max), Last_Updated_Date, 120) > Convert(varchar(max), substring(replace('@{activity('Lookup2').output.firstRow.Max_LastUpdateDate}', 'T', ' '), 0, 20), 120)",
 													"type": "Expression"
 												},
 												"queryTimeout": "02:00:00",
@@ -159,7 +159,13 @@
 										"outputs": [
 											{
 												"referenceName": "AzureSqlTable2",
-												"type": "DatasetReference"
+												"type": "DatasetReference",
+												"parameters": {
+													"TableName": {
+														"value": "@{item().Table_Name}",
+														"type": "Expression"
+													}
+												}
 											}
 										]
 									}
