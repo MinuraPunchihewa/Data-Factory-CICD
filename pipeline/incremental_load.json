@@ -95,7 +95,10 @@
 										"typeProperties": {
 											"source": {
 												"type": "AzureSqlSource",
-												"sqlReaderQuery": "SELECT *\nFROM @{item().Table_Name}",
+												"sqlReaderQuery": {
+													"value": "SELECT *\nFROM @{item().Table_Name}",
+													"type": "Expression"
+												},
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
@@ -150,7 +153,10 @@
 										"typeProperties": {
 											"source": {
 												"type": "AzureSqlSource",
-												"sqlReaderQuery": "SELECT MAX(Last_Updated_Date)\nFROM @{item().Table_Name}",
+												"sqlReaderQuery": {
+													"value": "SELECT MAX(Last_Updated_Date)\nFROM @{item().Table_Name}",
+													"type": "Expression"
+												},
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
@@ -182,7 +188,10 @@
 										"typeProperties": {
 											"source": {
 												"type": "AzureSqlSource",
-												"sqlReaderQuery": "UPDATE cfg\nSET Max_LastUpdatedDate = '@{activity('Lookup3').output.firstRow.Last_Updated_Date}'\nWHERE Table_Name = '@{item().TableName}'\n\nSELECT '1'",
+												"sqlReaderQuery": {
+													"value": "UPDATE cfg\nSET Max_LastUpdatedDate = '@{activity('Lookup5').output.firstRow.Last_Updated_Date}'\nWHERE Table_Name = '@{item().TableName}'\n\nSELECT '1'",
+													"type": "Expression"
+												},
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
@@ -302,7 +311,10 @@
 										"typeProperties": {
 											"source": {
 												"type": "AzureSqlSource",
-												"sqlReaderQuery": "SELECT MAX(Last_Updated_Date)\nFROM @{item().Table_Name}",
+												"sqlReaderQuery": {
+													"value": "SELECT MAX(Last_Updated_Date)\nFROM @{item().Table_Name}",
+													"type": "Expression"
+												},
 												"queryTimeout": "02:00:00",
 												"partitionOption": "None"
 											},
