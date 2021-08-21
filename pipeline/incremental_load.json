@@ -138,7 +138,8 @@
 												"partitionOption": "None"
 											},
 											"sink": {
-												"type": "AzureSqlSink"
+												"type": "AzureSqlSink",
+												"disableMetricsCollection": false
 											},
 											"enableStaging": false,
 											"translator": {
@@ -152,19 +153,16 @@
 										},
 										"inputs": [
 											{
-												"referenceName": "AzureSqlTable3",
+												"referenceName": "AzureSqlTable2",
 												"type": "DatasetReference"
 											}
 										],
 										"outputs": [
 											{
-												"referenceName": "AzureSqlTable2",
+												"referenceName": "AzureSqlTable3",
 												"type": "DatasetReference",
 												"parameters": {
-													"TableName": {
-														"value": "@{item().Table_Name}",
-														"type": "Expression"
-													}
+													"TableName": "@{item().Table_Name}"
 												}
 											}
 										]
